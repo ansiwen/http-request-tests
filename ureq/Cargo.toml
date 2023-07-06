@@ -1,12 +1,13 @@
 [package]
-name = "ureq"
+name = "ureq_test"
 version = "0.1.0"
 edition = "2021"
 
 # See more keys and their definitions at https://doc.rust-lang.org/cargo/reference/manifest.html
 
 [dependencies]
-ureq = { version = "*", features = ["json", "charset"] }
+ureq = { version = "*", default-features = false, features = ["json", "native-tls"] }
+native-tls = { version = "*" }
 
 [profile.release]
 opt-level = 'z'     # Optimize for size
